@@ -1,13 +1,13 @@
 import { client } from '$lib/graphql-client';
-import { getPostsQuery } from '$lib/graphql-queries';
+import { getPagesQuery } from '$lib/graphql-queries';
 
 export const get = async () => {
    try {
-      const { posts } = await client.request(getPostsQuery);
+      const { pages } = await client.request(getPagesQuery);
       
       return {
          status: 200,
-         body: {posts}
+         body: {pages}
       }
    } catch (error) {
       return {
